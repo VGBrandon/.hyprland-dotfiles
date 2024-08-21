@@ -17,7 +17,7 @@ sudo pacman -Syu --noconfirm
 
 # Instala aplicaciones necesarias
 echo -e "${BLUE}Instalando aplicaciones oficiales...${NC}"
-sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper
+sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper gnome-keyring
 
 # Configurar Git
 echo -e "${CYAN}Configurando Git...${NC}"
@@ -42,7 +42,7 @@ cd ..
 sudo rm -rf yay
 
 echo -e "${BLUE}Instalando aplicaciones desde AUR...${NC}"
-yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin git-credential-manager
+yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin
 
 echo -e "${BLUE}Instalando Oh My Zsh...${NC}"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
