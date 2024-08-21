@@ -48,7 +48,7 @@ cd ..
 sudo rm -rf yay
 
 echo -e "${BLUE}Instalando aplicaciones desde AUR...${NC}"
-yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin
+yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin git-credential-manager
 
 echo -e "${BLUE}Instalando Oh My Zsh...${NC}"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
