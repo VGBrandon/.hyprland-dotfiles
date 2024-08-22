@@ -47,7 +47,15 @@ yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin
 echo -e "${BLUE}Cambiando la shell predeterminada a Zsh...${NC}"
 chsh -s $(which zsh)
 
+echo -e "${BLUE}Instalando gtk de gruvbox-material...${NC}"
+git clone https://aur.archlinux.org/gruvbox-material-theme-git.git
+cd gruvbox-material-theme-git
+sudo -u $USER makepkg -si --noconfirm
+cd ..
+sudo rm -rf gruvbox-material-theme-git
+
 echo -e "${BLUE}Creando symlinks de mis dotfiles...${NC}"
+chmod +x rename-exist-files-for-execute-stow.sh
 ./rename-exist-files-for-execute-stow.sh
 
 echo -e "${BLUE}Agregando configuracion adicional de git para las llaves...${NC}"
