@@ -17,7 +17,7 @@ sudo pacman -Syu --noconfirm
 
 # Instala aplicaciones necesarias
 echo -e "${BLUE}Instalando aplicaciones oficiales...${NC}"
-sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper gnome-keyring seahorse nodejs npm lxappearance
+sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper gnome-keyring seahorse nodejs npm nwg-look
 
 # Configurar Git
 echo -e "${CYAN}Configurando Git...${NC}"
@@ -57,6 +57,7 @@ git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
 cp -r gruvbox-material-gtk/themes/* ~/.themes
 cp -r gruvbox-material-gtk/icons/* ~/.icons
 sudo rm -rf gruvbox-material-gtk
+nwg-look -a
 
 echo -e "${BLUE}Agregando configuracion adicional de git para las llaves...${NC}"
 git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
