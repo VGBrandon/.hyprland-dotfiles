@@ -53,5 +53,8 @@ chsh -s $(which zsh)
 echo -e "${BLUE}Creando symlinks de mis dotfiles...${NC}"
 ./rename-exist-files-for-execute-stow.sh
 
+echo -e "${BLUE}Agregando configuracion adicional de git para las llaves...${NC}"
+git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
+
 echo "Instalación y configuración completadas."
 
