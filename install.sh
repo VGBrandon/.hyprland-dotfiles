@@ -44,9 +44,6 @@ sudo rm -rf yay
 echo -e "${BLUE}Instalando aplicaciones desde AUR...${NC}"
 yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin
 
-echo -e "${BLUE}Instalando Oh My Zsh...${NC}"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 echo -e "${BLUE}Cambiando la shell predeterminada a Zsh...${NC}"
 chsh -s $(which zsh)
 
