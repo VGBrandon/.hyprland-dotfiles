@@ -17,7 +17,7 @@ sudo pacman -Syu --noconfirm
 
 # Instala aplicaciones necesarias
 echo -e "${BLUE}Instalando aplicaciones oficiales...${NC}"
-sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper gnome-keyring seahorse
+sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper gnome-keyring seahorse nodejs npm
 
 # Configurar Git
 echo -e "${CYAN}Configurando Git...${NC}"
