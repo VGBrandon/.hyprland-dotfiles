@@ -51,7 +51,7 @@ echo -e "${BLUE}Cambiando la shell predeterminada a Zsh...${NC}"
 chsh -s $(which zsh)
 
 echo -e "${BLUE}Creando symlinks de mis dotfiles...${NC}"
-stow .
+./rename-exist-files-for-execute-stow.sh
 
 echo "Instalación y configuración completadas."
 

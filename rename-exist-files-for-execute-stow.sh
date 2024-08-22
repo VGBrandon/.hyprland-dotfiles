@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directorio donde tienes tus dotfiles organizados
-DOTFILES_DIR=~/.dotfiles
+DOTFILES_DIR=~/.hyprland-dotfiles
 
 # Recorre todos los archivos en el directorio de dotfiles
 find "$DOTFILES_DIR" -type f | while read FILE; do
