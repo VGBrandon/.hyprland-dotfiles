@@ -88,3 +88,7 @@ git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
 echo "Instalación y configuración completadas."
 
+# Ejecutando script para reiniciar
+chmod +x reboot.sh
+./reboot.sh
+
