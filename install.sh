@@ -59,6 +59,24 @@ cp -r gruvbox-material-gtk/icons/* ~/.icons
 sudo rm -rf gruvbox-material-gtk
 nwg-look -a
 
+echo -e "${BLUE}Instalando Oh My Zsh y plugins...${NC}"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#Plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Editando el .zshrc para usar los plugins
+echo -e "${CYAN}Configurando .zshrc...${NC}"
+
+# Modificar el archivo .zshrc para actualizar la línea de plugins
+sed -i '/^plugins=(git)/ {
+    s/^plugins=(git)/plugins=(git\n zsh-autosuggestions\n zsh-syntax-highlighting/
+    n; s/^)/\n)/' ~/.zshrc
+
+# Mensaje de éxito
+echo -e "${GREEN}.zshrc configurado correctamente.${NC}"
+# Esto talvez se cambie en el futuro y sea un archivo de mis dotfiles
+
 echo -e "${BLUE}Agregando configuracion adicional de git para las llaves...${NC}"
 git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
