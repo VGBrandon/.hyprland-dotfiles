@@ -1,0 +1,96 @@
+//Mis modulos
+
+{
+  "custom/icon-updates":{
+		"format": " ",
+	},
+
+  "custom/icon-audio":{
+		"format": " ",
+	},
+
+
+  "custom/text-updates":{
+		"format": "{}%",
+    "tooltip-format": "{}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/updates.sh",
+    "restart-interval": 60,
+    "tooltip": false
+	},
+
+  "custom/icon-audio":{
+		"format": " ",
+	},
+
+    // Pulseaudio
+    "pulseaudio": {
+      // "scroll-step": 1, // %, can be a float
+      "format": "{volume}%",
+      "format-bluetooth": "{volume}%  {icon} {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
+      "format-source": "{volume}% ",
+      "format-source-muted": "",
+      "format-icons": {
+          "headphone": " ",
+          "hands-free": " ",
+          "headset": " ",
+          "phone": " ",
+          "portable": " ",
+          "car": " ",
+          "default": [" ", " ", " "]
+      },
+      "on-click": "pavucontrol"
+  },
+
+        // Group Hardware
+        "group/audio": {
+          "orientation": "inherit",
+          "drawer": {
+              "transition-duration": 300,
+              "children-class": "not-memory",
+              "transition-left-to-right": true
+          },        
+          "modules": [
+            "custom/icon-audio",
+              "pulseaudio",
+          ]
+      },
+
+  "group/update":{
+          "orientation": "inherit",
+          "drawer": {
+              "transition-duration": 300,
+              "children-class": "not-memory",
+              "transition-left-to-right": true
+          },        
+          "modules": [
+            "custom/icon-updates",
+              "custom/text-updates",
+          ]
+  },
+
+"clock": {
+        "format": "{:%H:%M %a}",
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        // START CLOCK FORMAT
+        "format-alt": "{:%Y-%m-%d}"
+        // END CLOCK FORMAT
+    },
+
+    "custom/pruebita":{
+      "format":"󰣇 ",
+      "format-alt": "󰣇  ",
+    },
+
+    "custom/script":{
+      "exec": "~/.config/waybar/scripts/custom-module.sh",
+      "interval": 10,
+      "format": "{}"
+    }
+  
+
+}

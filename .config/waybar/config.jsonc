@@ -1,0 +1,46 @@
+[
+  {
+  "output": [ "HDMI-A-1" ],
+    "include": [
+      "~/.config/waybar/bars/top.jsonc",
+    ],
+  }
+]
+
+/* //Mi propia configuracion
+{
+	"layer":"top",
+	"height": 12,
+	"margin-left":0,
+	"margin-right":0,
+
+	"include":["~/.config/waybar/modules.json"],
+
+/* 		//Modulos Left
+		"modules-left":[
+			"custom/appmenu",
+			"wlr/taskbar",
+			"group/quicklinks",
+			"hyprland/window",
+		],
+	
+
+					
+		//Modulos Right
+		"modules-right":[
+			"group/update",
+			"group/audio",
+			"clock",
+			"custom/pruebita",
+			"custom/script"
+			"pulseaudio",
+			"bluetooth",
+			"battery",
+			"group/hardware",
+			"custom/exit",
+			"network",
+			"custom/swwwallpaper",
+			"clock", 
+		]
+}
+ */
