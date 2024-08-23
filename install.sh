@@ -69,9 +69,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo -e "${CYAN}Configurando .zshrc...${NC}"
 
 # Modificar el archivo .zshrc para actualizar la línea de plugins
-sed -i '/^plugins=(git)/ {
-    s/^plugins=(git)/plugins=(git\n zsh-autosuggestions\n zsh-syntax-highlighting/
-    n; s/^)/\n)/' ~/.zshrc
+sed -i '/^plugins=(git)/c\plugins=(git zsh-autosuggestions zsh-syntax-highlighting)' ~/.zshrc
 
 # Mensaje de éxito
 echo -e "${GREEN}.zshrc configurado correctamente.${NC}"
