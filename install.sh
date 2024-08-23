@@ -47,7 +47,6 @@ yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin
 echo -e "${BLUE}Cambiando la shell predeterminada a Zsh...${NC}"
 chsh -s $(which zsh)
 
-
 echo -e "${BLUE}Creando symlinks de mis dotfiles...${NC}"
 chmod +x rename-exist-files-for-execute-stow.sh
 ./rename-exist-files-for-execute-stow.sh
@@ -76,6 +75,14 @@ sed -i '/^plugins=(git)/ {
 # Mensaje de éxito
 echo -e "${GREEN}.zshrc configurado correctamente.${NC}"
 # Esto talvez se cambie en el futuro y sea un archivo de mis dotfiles
+
+# Dando permisos a el lanzador de waybar y a sus scripts
+chmod +x ~/.config/waybar/scripts/change_wallpaper.sh
+chmod +x ~/.config/waybar/scripts/custom-module.sh
+chmod +x ~/.config/waybar/scripts/hyprshade.sh
+chmod +x ~/.config/waybar/scripts/hyprshot.sh
+chmod +x ~/.config/waybar/scripts/updates.sh
+chmod +x ~/.config/waybar/launch.sh
 
 echo -e "${BLUE}Agregando configuracion adicional de git para las llaves...${NC}"
 git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
