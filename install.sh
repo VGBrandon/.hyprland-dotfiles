@@ -75,19 +75,11 @@ sed -i '/^plugins=(git)/c\plugins=(git zsh-autosuggestions zsh-syntax-highlighti
 echo -e "${GREEN}.zshrc configurado correctamente.${NC}"
 # Esto talvez se cambie en el futuro y sea un archivo de mis dotfiles
 
-# Dando permisos a el lanzador de waybar y a sus scripts
-chmod +x ~/.config/waybar/scripts/change_wallpaper.sh
-chmod +x ~/.config/waybar/scripts/custom-module.sh
-chmod +x ~/.config/waybar/scripts/hyprshade.sh
-chmod +x ~/.config/waybar/scripts/hyprshot.sh
-chmod +x ~/.config/waybar/scripts/updates.sh
-chmod +x ~/.config/waybar/launch.sh
-
 echo -e "${BLUE}Agregando configuracion adicional de git para las llaves...${NC}"
 git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
 # Activando servicio de bluetooth
-systemctl start bluetooth.service
+# systemctl start bluetooth.service
 
 echo "Instalación y configuración completadas."
 
