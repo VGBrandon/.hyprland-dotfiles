@@ -42,7 +42,7 @@ cd ..
 sudo rm -rf yay
 
 echo -e "${BLUE}Instalando aplicaciones desde AUR...${NC}"
-yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin waypaper
+yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin waypaper cava
 
 echo -e "${BLUE}Cambiando la shell predeterminada a Zsh...${NC}"
 chsh -s $(which zsh)
