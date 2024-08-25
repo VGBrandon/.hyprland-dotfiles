@@ -2,3 +2,4 @@ install.sh
 rename-exist-files-for-execute-stow.sh
 .git
 reboot.sh
+.gitignore
