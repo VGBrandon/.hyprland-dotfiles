@@ -78,6 +78,10 @@ echo -e "${GREEN}.zshrc configurado correctamente.${NC}"
 echo -e "${BLUE}Agregando configuracion adicional de git para las llaves...${NC}"
 git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
+# Instalando NvChad
+echo -e "${BLUE}Instalando configuracion de NvChad...${NC}"
+git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+
 # Activando servicio de bluetooth
 # systemctl start bluetooth.service
 
