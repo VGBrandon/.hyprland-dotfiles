@@ -82,6 +82,15 @@ git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 echo -e "${BLUE}Instalando configuracion de NvChad...${NC}"
 git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
 
+# Instalando Rofi themes
+echo -e "${BLUE}Instalando Rofi Themes...${NC}"
+$ git clone --depth=1 https://github.com/adi1090x/rofi.git
+cd rofi
+chmod +x setup.sh
+./setup.sh
+cd ..
+sudo rm -rf rofi
+
 # Activando servicio de bluetooth
 # systemctl start bluetooth.service
 
