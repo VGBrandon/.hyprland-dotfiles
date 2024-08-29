@@ -80,7 +80,7 @@ git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
 # Instalando NvChad
 echo -e "${BLUE}Instalando configuracion de NvChad...${NC}"
-git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+git clone https://github.com/NvChad/starter ~/.config/nvim
 
 # Instalando Rofi themes
 echo -e "${BLUE}Instalando Rofi Themes...${NC}"
