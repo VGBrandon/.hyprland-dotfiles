@@ -19,11 +19,9 @@ sudo pacman -Syu --noconfirm
 echo -e "${BLUE}Instalando aplicaciones oficiales...${NC}"
 sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper gnome-keyring seahorse nodejs npm nwg-look bluez bluez-utils swww ttf-font-awesome firefox rofi ripgrep
 
-# Configurar Git
-echo -e "${CYAN}Configurando Git...${NC}"
-git config --global user.name "VGBrandon"
-git config --global user.email "villegas.galvan.brandon@gmail.com"
-echo -e "${GREEN}Git configurado correctamente.${NC}"
+# Ejecutando script de configuracion de Git
+chmod +x configure-git.sh
+./configure-git.sh
 
 # Descomentar o añadir GRUB_DISABLE_OS_PROBER=false en /etc/default/grub
 echo -e "${CYAN}Modificando configuración de GRUB para habilitar os-prober...${NC}"
