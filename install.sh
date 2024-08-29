@@ -84,7 +84,7 @@ git clone https://github.com/NvChad/starter ~/.config/nvim
 
 # Instalando Rofi themes
 echo -e "${BLUE}Instalando Rofi Themes...${NC}"
-$ git clone --depth=1 https://github.com/adi1090x/rofi.git
+git clone --depth=1 https://github.com/adi1090x/rofi.git
 cd rofi
 chmod +x setup.sh
 ./setup.sh
