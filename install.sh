@@ -17,7 +17,7 @@ sudo pacman -Syu --noconfirm
 
 # Instala aplicaciones necesarias
 echo -e "${BLUE}Instalando aplicaciones oficiales...${NC}"
-sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper gnome-keyring seahorse nodejs npm nwg-look bluez bluez-utils swww ttf-font-awesome firefox rofi ripgrep
+sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper gnome-keyring seahorse nodejs npm nwg-look bluez bluez-utils swww ttf-font-awesome firefox rofi ripgrep pnpm
 
 # Ejecutando script de configuracion de Git
 chmod +x configure-git.sh
@@ -88,6 +88,9 @@ chmod +x setup.sh
 ./setup.sh
 cd ..
 sudo rm -rf rofi
+
+# Instalando live-server para nvim
+sudo npm install -g live-server
 
 # Activando servicio de bluetooth
 # systemctl start bluetooth.service
