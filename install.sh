@@ -40,7 +40,7 @@ cd ..
 sudo rm -rf yay
 
 echo -e "${BLUE}Instalando aplicaciones desde AUR...${NC}"
-yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin waypaper cava hyprpicker
+yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin waypaper cava hyprpicker image-roll
 
 echo -e "${BLUE}Cambiando la shell predeterminada a Zsh...${NC}"
 chsh -s $(which zsh)
