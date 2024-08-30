@@ -85,6 +85,8 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
+#custom-archlinux,
+#custom-swwwallpaper,
 #pulseaudio-slider,
 #custom-power,
 #clock,
@@ -158,6 +160,12 @@ button:hover {
   padding-right: 13px;
 }
 
+#custom-swwwallpaper {
+  background-color: #e2504c;
+  border-radius: 10px;
+  padding-right: 13px;
+}
+
 #pulseaudio-slider{
   background-color: #e2504c;
   border-radius: 10px;
@@ -167,6 +175,12 @@ button:hover {
 
 #pulseaudio-slider trough{
   background-color: rgba(0,0,0,0.2);
+}
+
+#custom-archlinux{
+  background-color: #2d3436;
+  border-radius: 10px;
+  padding-right: 15px;
 }
 
 #idle_inhibitor{
