@@ -45,6 +45,10 @@ yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin way
 echo -e "${BLUE}Cambiando la shell predeterminada a Zsh...${NC}"
 chsh -s $(which zsh)
 
+# Instalando NvChad
+echo -e "${BLUE}Instalando configuracion de NvChad...${NC}"
+git clone https://github.com/NvChad/starter ~/.config/nvim
+
 echo -e "${BLUE}Creando symlinks de mis dotfiles...${NC}"
 chmod +x rename-exist-files-for-execute-stow.sh
 ./rename-exist-files-for-execute-stow.sh
@@ -75,10 +79,6 @@ echo -e "${GREEN}.zshrc configurado correctamente.${NC}"
 
 echo -e "${BLUE}Agregando configuracion adicional de git para las llaves...${NC}"
 git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
-
-# Instalando NvChad
-echo -e "${BLUE}Instalando configuracion de NvChad...${NC}"
-git clone https://github.com/NvChad/starter ~/.config/nvim
 
 # Instalando Rofi themes
 echo -e "${BLUE}Instalando Rofi Themes...${NC}"
