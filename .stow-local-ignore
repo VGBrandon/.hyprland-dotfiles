@@ -3,3 +3,4 @@ rename-exist-files-for-execute-stow.sh
 .git
 reboot.sh
 .gitignore
+configure-git.sh
