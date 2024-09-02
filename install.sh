@@ -95,6 +95,17 @@ sudo npm install -g live-server
 # Activando servicio de bluetooth
 # systemctl start bluetooth.service
 
+# Instalando nuevo tema de SDDM
+echo -e "${BLUE}Clonando nuevo tema para SDDM...${NC}"
+sudo git clone https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
+sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
+# Cambiando por el nuevo tema
+echo "[Theme]
+Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
+# Dando permisos de usuario para que se pueda editar
+# Esto debera cambiarse en un futuro para que sea dinamico
+sudo chown -R $USER:$USER /usr/share/sddm/themes/sddm-astronaut-theme
+
 echo "Instalación y configuración completadas."
 
 # Ejecutando script para reiniciar
