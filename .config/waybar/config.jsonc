@@ -21,6 +21,7 @@
         //"pulseaudio/slider",
         //"network",
         "custom/swwwallpaper",
+        "custom/screenshot",
         //"power-profiles-daemon",
         "cpu",
         "memory",
@@ -218,5 +219,9 @@
     },
     "custom/archlinux":{
       "format": ""
+    },
+    "custom/screenshot":{
+      "format":"󰄀",
+      "on-click":"$HOME/.config/rofi/applets/bin/screenshot.sh"
     }
 }

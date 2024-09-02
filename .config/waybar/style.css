@@ -85,6 +85,7 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
+#custom-screenshot,
 #custom-archlinux,
 #custom-swwwallpaper,
 #pulseaudio-slider,
@@ -181,6 +182,18 @@ button:hover {
   background-color: #2d3436;
   border-radius: 10px;
   padding-right: 15px;
+}
+
+#custom-screenshot{
+  background-color: #e2504c;
+  border-radius: 10px;
+  padding-right: 13px;
+}
+
+#tray {
+  background-color: #e2504c;
+  border-radius: 10px;
+  padding-right: 10px;
 }
 
 #idle_inhibitor{
@@ -294,9 +307,6 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#tray {
-    background-color: #2980b9;
-}
 
 #tray > .passive {
     -gtk-icon-effect: dim;
