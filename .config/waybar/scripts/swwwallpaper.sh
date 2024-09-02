@@ -26,3 +26,7 @@ echo $NEXT_INDEX > "$INDEX_FILE"
 # Cambiar los colores de pywal
 #sleep 2.5 # Esperamos 2s y medio para que termine la animacion de swww
 #wal -i "${WALLPAPERS[$NEXT_INDEX]}"
+
+# Cambiar fondo de SDDM con el fondo nuevo de swww
+echo "ejecutando script para sddm"
+$HOME/.config/waybar/scripts/change-background-sddm-with-swww.sh
