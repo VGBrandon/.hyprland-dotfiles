@@ -176,7 +176,7 @@
     },
     "custom/power": {
         "format" : "⏻",
-        "on-click": "$HOME/.config/rofi/powermenu/type-2/powermenu.sh"
+        "on-click": "$HOME/.config/rofi/powermenu/powermenu.sh"
     },
     "cpu": {
      "interval": 10,
