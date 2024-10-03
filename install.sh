@@ -17,7 +17,7 @@ sudo pacman -Syu --noconfirm
 
 # Instala aplicaciones necesarias
 echo -e "${BLUE}Instalando aplicaciones oficiales...${NC}"
-sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper gnome-keyring seahorse nodejs npm nwg-look bluez bluez-utils swww ttf-font-awesome firefox rofi ripgrep pnpm swappy nwg-displays
+sudo pacman -S --noconfirm neovim git neofetch waybar thunar font-manager tree curl zsh zsh-completions os-prober ntfs-3g tumbler ffmpegthumbnailer thunar-archive-plugin thunar-media-tags-plugin thunar-volman ark gvfs polkit-gnome stow hyprpaper gnome-keyring seahorse nodejs npm nwg-look bluez bluez-utils swww ttf-font-awesome firefox rofi ripgrep pnpm swappy nwg-displays lsd
 
 # Ejecutando script de configuracion de Git
 chmod +x configure-git.sh
@@ -40,7 +40,7 @@ cd ..
 sudo rm -rf yay
 
 echo -e "${BLUE}Instalando aplicaciones desde AUR...${NC}"
-yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin waypaper cava hyprpicker image-roll hyprshot
+yay -S --noconfirm thunar-shares-plugin google-chrome visual-studio-code-bin waypaper cava hyprpicker image-roll hyprshot python-pywalfox
 
 echo -e "${BLUE}Cambiando la shell predeterminada a Zsh...${NC}"
 chsh -s $(which zsh)
@@ -105,6 +105,9 @@ Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
 # Dando permisos de usuario para que se pueda editar
 # Esto debera cambiarse en un futuro para que sea dinamico
 sudo chown -R $USER:$USER /usr/share/sddm/themes/sddm-astronaut-theme
+
+# Instalando pywal16colors
+# clonar paquete aur, no funciona con yay
 
 echo "Instalación y configuración completadas."
 
