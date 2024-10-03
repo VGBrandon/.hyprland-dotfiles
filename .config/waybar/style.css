@@ -1,3 +1,5 @@
+@import url("/home/vgbrandon/.cache/wal/colors-waybar.css");
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "JetBrainsMono Nerd Font";
@@ -85,10 +87,10 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
+#custom-toggle_filter_light_blue,
 #custom-screenshot,
 #custom-archlinux,
 #custom-swwwallpaper,
-#pulseaudio-slider,
 #custom-power,
 #clock,
 #battery,
@@ -128,54 +130,90 @@ button:hover {
 
 #clock {
     background-color: #e2504c; /* Color de fondo principal */
+    background-color: @color1; /* Aplicando nuevo color de pywal16*/
     border-radius: 10px;
 }
 
 #custom-power{
   background-color: #e2504c;
+  background-color: @color1; /* Aplicando nuevo color de pywal16*/
   border-radius: 10px;
   padding-right: 13px;
 }
 
 #cpu{
   background-color: #e2504c;
+  background-color: @color1; /* Aplicando nuevo color de pywal16*/
   border-radius: 10px;
   padding-right: 13px;
 }
 
 #memory{
   background-color: #e2504c;
+  background-color: @color1; /* Aplicando nuevo color de pywal16*/
   border-radius: 10px;
   padding-right: 13px;
 }
 
 #pulseaudio{
   background-color: #e2504c;
+  background-color: @color1; /* Aplicando nuevo color de pywal16*/
   border-radius: 10px;
-  padding-right: 13px;
+  padding-right: 15px;
 }
 
 #network {
   background-color: #e2504c;
+  background-color: @color1; /* Aplicando nuevo color de pywal16*/
   border-radius: 10px;
   padding-right: 13px;
 }
 
 #custom-swwwallpaper {
   background-color: #e2504c;
+  background-color: @color1; /* Aplicando nuevo color de pywal16*/
+  border-radius: 10px;
+  padding-right: 13px;
+}
+
+#custom-toggle_filter_light_blue{
+  background-color: @color1; /* Aplicando nuevo color de pywal16*/
   border-radius: 10px;
   padding-right: 13px;
 }
 
 #pulseaudio-slider{
-  background-color: #e2504c;
-  border-radius: 10px;
-  padding-right: 10px;
-  min-width: 100px;
+  padding: 0 10px 0px 0px;
+  color:#ffffff;
 }
 
-#pulseaudio-slider trough{
-  background-color: rgba(0,0,0,0.2);
+#pulseaudio-slider slider{
+  	color:white;
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-width: 80px;
+    min-height: 16px;
+    border-radius: 10px;
+    background-color: @background;
+    padding: 0px 0px 0px 0px;
+}
+#pulseaudio-slider highlight {
+	color:white;
+    min-width: 16px;
+    border-radius: 10px;
+    background-color: @background;
+}
+
+#pulse{
+  background-color:@color1;
+  border-radius:10px;
 }
 
 #custom-archlinux{
@@ -186,12 +224,14 @@ button:hover {
 
 #custom-screenshot{
   background-color: #e2504c;
+  background-color: @color1; /* Aplicando nuevo color de pywal16*/
   border-radius: 10px;
   padding-right: 13px;
 }
 
 #tray {
   background-color: #e2504c;
+  background-color: @color1; /* Aplicando nuevo color de pywal16*/
   border-radius: 10px;
   padding-right: 10px;
 }
