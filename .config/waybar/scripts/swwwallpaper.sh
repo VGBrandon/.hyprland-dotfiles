@@ -57,8 +57,16 @@ swww img -o "HDMI-A-1","DP-1" "$WALLPAPERS_DIR/${WALLPAPERS[$NEXT_INDEX]}" --tra
 # Guardar el nuevo nombre del fondo de pantalla en el archivo
 echo "${WALLPAPERS[$NEXT_INDEX]}" > "$CURRENT_WALLPAPER_FILE"
 
+sleep 2
 # Cambiar los colores de pywal (opcional)
-#wal -i "$WALLPAPERS_DIR/${WALLPAPERS[$NEXT_INDEX]}"
+wal -i $WALLPAPERS_DIR/${WALLPAPERS[$NEXT_INDEX]}
+# Recargando barra (creo que waybar tiene una opcion para recargar en lugar de usar esto)
+pywalfox update
+#sleep 3 # Tiempo estimado para que acabe la animacion de swww
+pkill -SIGUSR2 waybar #recargando waybar (verificar si hay otra manera que no se note el salto)
+
+# Tomar los colores de pywal para firefox (debe tener la extension pywalfirefox y tener instalado python-pywalfox)
+# Comando que hace que cargue firefox la paleta de pywal
 
 # Cambiar fondo de SDDM con el fondo nuevo de swww
 echo "ejecutando script para sddm"
