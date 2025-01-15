@@ -7,7 +7,8 @@ sudo pacman -S --needed --noconfirm \
   git \
   stow \
   starship \
-  lazygit
+  lazygit \
+  eza
 
 echo "Paquetes oficiales instalados."
 
