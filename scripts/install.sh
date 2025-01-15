@@ -12,7 +12,7 @@ echo "Iniciando instalación..."
 ../stow/stow-all.sh
 
 # Paso 4: Configuración post-instalación
-#./scripts/post-install.sh
+./post-install.sh
 
 echo "¡Instalación completada!"
 
