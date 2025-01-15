@@ -17,7 +17,8 @@ fi
 
 yay -S --needed --noconfirm \
   visual-studio-code-bin \
-  google-chrome
+  google-chrome \
+  wezterm-git
 
 echo "Paquetes AUR instalados."
 
