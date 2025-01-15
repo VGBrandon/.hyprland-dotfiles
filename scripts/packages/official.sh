@@ -8,7 +8,8 @@ sudo pacman -S --needed --noconfirm \
   stow \
   starship \
   lazygit \
-  eza
+  eza \
+  neofetch
 
 echo "Paquetes oficiales instalados."
 
