@@ -13,6 +13,7 @@ sudo pacman -S --needed --noconfirm \
     nodejs \
     npm \
     unzip \
-    hyprlock
+    hyprlock \
+    yazi
 
 echo "Paquetes oficiales instalados."
