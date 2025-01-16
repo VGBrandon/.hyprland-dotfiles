@@ -9,7 +9,10 @@ sudo pacman -S --needed --noconfirm \
   starship \
   lazygit \
   eza \
-  neofetch
+  neofetch \
+  nodejs \
+  npm \
+  unzip
 
 echo "Paquetes oficiales instalados."
 
