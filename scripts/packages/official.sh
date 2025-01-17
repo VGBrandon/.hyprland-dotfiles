@@ -15,6 +15,7 @@ sudo pacman -S --needed --noconfirm \
     unzip \
     hyprlock \
     yazi \
-    neovim
+    neovim \
+    tree
 
 echo "Paquetes oficiales instalados."
