@@ -3,6 +3,8 @@
 # Directorio de los dotfiles
 DOTFILES_DIR="$HOME/.hyprland-dotfiles"
 TARGET_DIR="$HOME"
+HYPRLAND_SOURCE="$HOME/.hyprland-dotfiles/.config/hypr/hyprland.conf"
+HYPRLAND_DEST="$HOME/.config/hypr/hyprland.conf"
 
 # Ejecutar stow en modo simulación y devolver el error si hay conflictos
 run_stow_simulation() {
@@ -30,12 +32,33 @@ rename_conflict() {
     fi
 }
 
+# Manejar hyprland.conf manualmente
+handle_hyprland_conf() {
+    echo "Manejando hyprland.conf manualmente..."
+
+    # Crear el directorio de destino si no existe
+    if [ ! -d "$(dirname "$HYPRLAND_DEST")" ]; then
+        mkdir -p "$(dirname "$HYPRLAND_DEST")"
+        echo "Se creó el directorio $(dirname "$HYPRLAND_DEST")."
+    fi
+
+    # Crear respaldo si el archivo de destino existe
+    if [ -f "$HYPRLAND_DEST" ]; then
+        BACKUP="$HYPRLAND_DEST.bak"
+        cp "$HYPRLAND_DEST" "$BACKUP"
+        echo "Se creó un respaldo del archivo existente: $BACKUP"
+    fi
+
+    # Reemplazar el contenido del archivo destino con el del archivo fuente
+    cat "$HYPRLAND_SOURCE" >"$HYPRLAND_DEST"
+    echo "Se reemplazó el contenido de $HYPRLAND_DEST con el contenido de $HYPRLAND_SOURCE."
+}
+
 # Reintentar hasta que no haya conflictos
 while true; do
     # Ejecutar stow en modo simulación y capturar el resultado
     result=$(run_stow_simulation)
 
-    # Mostrar el resultado de la simulación para depuración
     echo "Resultado de la simulación:"
     echo "$result"
 
@@ -45,25 +68,23 @@ while true; do
         break
     fi
 
-    # Si hay conflictos, renombramos los archivos que causan el error
+    # Renombrar archivos en conflicto
     echo "$result" | grep "over existing target" | while read -r line; do
-        # Mostrar la línea completa para depuración
         echo "Línea con conflicto: $line"
-
-        # Extraemos el archivo en conflicto de la línea del error
         conflict_file=$(echo "$line" | sed 's/.*over existing target \(.*\) since.*/\1/')
 
-        # Verificar si se extrajo correctamente el archivo
-        echo "Archivo extraído: $conflict_file"
-
         if [[ -n "$conflict_file" ]]; then
-            rename_conflict "$conflict_file"
+            if [[ "$conflict_file" == ".config/hypr/hyprland.conf" ]]; then
+                handle_hyprland_conf
+            else
+                rename_conflict "$conflict_file"
+            fi
         else
             echo "No se pudo extraer el archivo en conflicto."
         fi
     done
 
-    # Verificar si hay otros errores y terminar si los encontramos
+    # Verificar otros errores críticos
     if echo "$result" | grep -q -E "cannot stow|All operations aborted"; then
         echo "Error detectado durante la simulación de stow:"
         echo "$result"
