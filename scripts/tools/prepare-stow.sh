@@ -1,72 +1,73 @@
 #!/bin/bash
 
-# Ruta al archivo de ignore de stow
-IGNORE_FILE="$HOME/.hyprland-dotfiles/.stow-local-ignore"
-DOTFILES_DIR="$HOME/.hyprland-dotfiles" # Directorio donde se encuentran los dotfiles
+# Directorio de los dotfiles
+DOTFILES_DIR="$HOME/.hyprland-dotfiles"
+TARGET_DIR="$HOME"
 
-# Función para renombrar archivos en conflicto con .bak
+# Ejecutar stow en modo simulación y devolver el error si hay conflictos
+run_stow_simulation() {
+    echo "Ejecutando stow en modo simulación..."
+    stow -n -d "$DOTFILES_DIR" -t "$TARGET_DIR" . 2>&1
+}
+
+# Renombrar archivo en conflicto
 rename_conflict() {
     local file="$1"
-    if [[ -e "$file" && ! -L "$file" && ! "$file" =~ \.bak$ ]]; then
-        echo "Renombrando archivo en conflicto: $file"
-        mv "$file" "$file.bak"
-    fi
-}
+    local target_file="$TARGET_DIR/$file"
 
-# Función para leer el archivo de ignore y devolver los patrones a ignorar
-get_ignore_patterns() {
-    if [[ -f "$IGNORE_FILE" ]]; then
-        grep -v '^#' "$IGNORE_FILE" | grep -v '^$' # Ignora líneas vacías y comentarios
+    if [[ -e "$target_file" && ! -L "$target_file" && ! "$target_file" =~ \.bak$ ]]; then
+        echo "Renombrando archivo en conflicto: $target_file"
+        mv "$target_file" "$target_file.bak"
+
+        # Verificar si el archivo se renombró correctamente
+        if [[ -e "$target_file.bak" ]]; then
+            echo "Archivo renombrado con éxito a: $target_file.bak"
+        else
+            echo "Error al renombrar el archivo: $target_file"
+        fi
     else
-        echo "" # Si no existe el archivo .stow-local-ignore, no ignoramos nada
+        echo "El archivo no se puede renombrar o ya está renombrado: $target_file"
     fi
 }
 
-# Función para ejecutar stow en modo simulación y verificar conflictos adicionales
-simulate_stow() {
-    echo "Ejecutando stow en modo simulación..."
-    stow -n -d "$DOTFILES_DIR" -t "$HOME" $(ls -d */ | grep -v '.git' | sed 's#/##') # Ejecuta stow para cada paquete
-}
+# Reintentar hasta que no haya conflictos
+while true; do
+    # Ejecutar stow en modo simulación y capturar el resultado
+    result=$(run_stow_simulation)
 
-# Verificar si un archivo está ignorado
-is_ignored() {
-    local file="$1"
-    local pattern
-    for pattern in $(get_ignore_patterns); do
-        if [[ "$file" == *"$pattern"* ]]; then
-            return 0 # El archivo está ignorado
-        fi
-    done
-    return 1 # El archivo no está ignorado
-}
+    # Mostrar el resultado de la simulación para depuración
+    echo "Resultado de la simulación:"
+    echo "$result"
 
-# Revisar posibles conflictos antes de ejecutar stow real
-echo "Verificando posibles conflictos antes de ejecutar stow..."
-
-# Recorremos las carpetas de archivos a ser stoweados (suponiendo que las carpetas no están ignoradas)
-for dir in "$DOTFILES_DIR"/*/; do
-    # Ignoramos si la carpeta está en el archivo .stow-local-ignore
-    if is_ignored "$dir"; then
-        echo "Ignorando carpeta: $dir"
-        continue
+    # Si no hay conflictos, salir del loop
+    if ! echo "$result" | grep -q "over existing target"; then
+        echo "Conflictos resueltos. Ahora puedes ejecutar stow real."
+        break
     fi
 
-    # Recorremos los archivos dentro de cada directorio
-    for file in "$dir"*; do
-        if is_ignored "$file"; then
-            echo "Ignorando archivo: $file"
-            continue
-        fi
+    # Si hay conflictos, renombramos los archivos que causan el error
+    echo "$result" | grep "over existing target" | while read -r line; do
+        # Mostrar la línea completa para depuración
+        echo "Línea con conflicto: $line"
 
-        # Verificamos si el archivo existe en la ruta real
-        target_file="$HOME/$file"
-        if [[ -e "$target_file" && ! -L "$target_file" ]]; then
-            rename_conflict "$target_file"
+        # Extraemos el archivo en conflicto de la línea del error
+        conflict_file=$(echo "$line" | sed 's/.*over existing target \(.*\) since.*/\1/')
+
+        # Verificar si se extrajo correctamente el archivo
+        echo "Archivo extraído: $conflict_file"
+
+        if [[ -n "$conflict_file" ]]; then
+            rename_conflict "$conflict_file"
+        else
+            echo "No se pudo extraer el archivo en conflicto."
         fi
     done
+
+    # Verificar si hay otros errores y terminar si los encontramos
+    if echo "$result" | grep -q -E "cannot stow|All operations aborted"; then
+        echo "Error detectado durante la simulación de stow:"
+        echo "$result"
+        echo "Abortando el script debido a un error crítico."
+        exit 1
+    fi
 done
-
-# Ejecutar la simulación de stow para detectar otros conflictos
-simulate_stow
-
-echo "Conflictos resueltos. Ahora puedes ejecutar stow real."
