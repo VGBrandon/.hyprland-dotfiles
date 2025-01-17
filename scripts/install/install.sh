@@ -15,4 +15,3 @@ echo "Iniciando instalación..."
 ./post-install.sh
 
 echo "¡Instalación completada!"
-
