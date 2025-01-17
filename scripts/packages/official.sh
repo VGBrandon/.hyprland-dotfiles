@@ -14,6 +14,7 @@ sudo pacman -S --needed --noconfirm \
     npm \
     unzip \
     hyprlock \
-    yazi
+    yazi \
+    neovim
 
 echo "Paquetes oficiales instalados."
