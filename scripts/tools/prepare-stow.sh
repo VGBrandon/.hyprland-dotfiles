@@ -2,6 +2,7 @@
 
 # Ruta al archivo de ignore de stow
 IGNORE_FILE="$HOME/.hyprland-dotfiles/.stow-local-ignore"
+DOTFILES_DIR="$HOME/.hyprland-dotfiles" # Directorio donde se encuentran los dotfiles
 
 # Función para renombrar archivos en conflicto con .bak
 rename_conflict() {
@@ -24,7 +25,7 @@ get_ignore_patterns() {
 # Función para ejecutar stow en modo simulación y verificar conflictos adicionales
 simulate_stow() {
     echo "Ejecutando stow en modo simulación..."
-    stow -vn
+    stow -n -d "$DOTFILES_DIR" -t "$HOME" $(ls -d */ | grep -v '.git' | sed 's#/##') # Ejecuta stow para cada paquete
 }
 
 # Verificar si un archivo está ignorado
@@ -43,7 +44,7 @@ is_ignored() {
 echo "Verificando posibles conflictos antes de ejecutar stow..."
 
 # Recorremos las carpetas de archivos a ser stoweados (suponiendo que las carpetas no están ignoradas)
-for dir in */; do
+for dir in "$DOTFILES_DIR"/*/; do
     # Ignoramos si la carpeta está en el archivo .stow-local-ignore
     if is_ignored "$dir"; then
         echo "Ignorando carpeta: $dir"
@@ -58,8 +59,9 @@ for dir in */; do
         fi
 
         # Verificamos si el archivo existe en la ruta real
-        if [[ -e "$HOME/$file" && ! -L "$HOME/$file" ]]; then
-            rename_conflict "$HOME/$file"
+        target_file="$HOME/$file"
+        if [[ -e "$target_file" && ! -L "$target_file" ]]; then
+            rename_conflict "$target_file"
         fi
     done
 done
