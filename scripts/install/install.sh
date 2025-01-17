@@ -21,4 +21,3 @@ title_to_ascii "Configure post install" "blue"
 $HOME/.hyprland-dotfiles/scripts/install/post-install.sh
 
 title_to_ascii "Installation Complete" "green"
-echo "¡Instalación completada!"
