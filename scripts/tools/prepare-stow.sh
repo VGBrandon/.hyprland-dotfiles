@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ruta al archivo de ignore de stow
-IGNORE_FILE=".stow-local-ignore"
+IGNORE_FILE="$HOME/.hyprland-dotfiles/.stow-local-ignore"
 
 # Función para renombrar archivos en conflicto con .bak
 rename_conflict() {
