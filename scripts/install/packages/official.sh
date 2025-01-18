@@ -28,6 +28,7 @@ sudo pacman -S --needed --noconfirm \
     thunar \
     polkit-gnome \
     ntfs-3g \
-    zoxide
+    zoxide \
+    waybar
 
 echo "Paquetes oficiales instalados."
