@@ -17,6 +17,14 @@ sudo pacman -S --needed --noconfirm \
     yazi \
     neovim \
     tree \
-    nwg-displays
+    nwg-displays \
+    tumbler \
+    ffmpegthumbnailer \
+    thunar-archive-plugin \
+    thunar-media-tags-plugin \
+    thunar-volman \
+    ark \
+    gvfs \
+    thunar
 
 echo "Paquetes oficiales instalados."

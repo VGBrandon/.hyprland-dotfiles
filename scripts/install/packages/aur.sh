@@ -18,6 +18,7 @@ yay -S --needed --noconfirm \
     visual-studio-code-bin \
     google-chrome \
     wezterm-git \
-    hyprshot
+    hyprshot \
+    thunar-shares-plugin
 
 echo "Paquetes AUR instalados."
