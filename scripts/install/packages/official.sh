@@ -26,6 +26,7 @@ sudo pacman -S --needed --noconfirm \
     ark \
     gvfs \
     thunar \
-    polkit-gnome
+    polkit-gnome \
+    ntfs-3g
 
 echo "Paquetes oficiales instalados."
