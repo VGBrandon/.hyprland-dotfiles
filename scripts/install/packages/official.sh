@@ -29,6 +29,7 @@ sudo pacman -S --needed --noconfirm \
     polkit-gnome \
     ntfs-3g \
     zoxide \
-    waybar
+    waybar \
+    ripgrep
 
 echo "Paquetes oficiales instalados."
