@@ -16,6 +16,7 @@ sudo pacman -S --needed --noconfirm \
     hyprlock \
     yazi \
     neovim \
-    tree
+    tree \
+    nwg-displays
 
 echo "Paquetes oficiales instalados."
