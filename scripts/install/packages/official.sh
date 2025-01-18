@@ -30,6 +30,7 @@ sudo pacman -S --needed --noconfirm \
     ntfs-3g \
     zoxide \
     waybar \
-    ripgrep
+    ripgrep \
+    fzf
 
 echo "Paquetes oficiales instalados."
