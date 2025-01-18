@@ -19,6 +19,7 @@ yay -S --needed --noconfirm \
     google-chrome \
     wezterm-git \
     hyprshot \
-    thunar-shares-plugin
+    thunar-shares-plugin \
+    apple-fonts
 
 echo "Paquetes AUR instalados."
