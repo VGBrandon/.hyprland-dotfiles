@@ -10,7 +10,7 @@
     end
   } ]]
 
-return {
+--[[ return {
 	"RRethy/base16-nvim",
 	lazy = false, -- No es lazy-loaded
 	priority = 1000, -- Prioridad alta
@@ -20,5 +20,19 @@ return {
 
 		-- Aplicamos el esquema de colores Base16 Ashes
 		vim.cmd.colorscheme("base16-ashes")
+	end,
+} ]]
+
+return {
+	"neanias/everforest-nvim",
+	version = false,
+	lazy = false,
+	priority = 1000, -- make sure to load this before all the other start plugins
+	-- Optional; default configuration will be used if setup isn't called.
+	config = function()
+		require("everforest").setup({
+			-- Your config here
+		})
+		vim.cmd.colorscheme("everforest")
 	end,
 }
