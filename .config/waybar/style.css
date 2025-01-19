@@ -2,12 +2,10 @@
     font-family: "SF Pro Display", sans-serif;
     font-size: 14px;
     color: white;
-    background: transparent;
 }
 
 #waybar {
-    background-color: rgba(28, 28, 30, 0.50);
-    border-bottom: 1px solid #000000;
+    background-color: rgba(0, 0, 0, 0.15);
     padding: 4px 10px;
     margin: 5px;
 }
