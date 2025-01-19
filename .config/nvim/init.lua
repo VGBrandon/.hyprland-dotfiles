@@ -29,4 +29,5 @@ require("lazy").setup({
 	require("plugins.lazygit"),
 	require("plugins.comment-nvim"),
 	require("plugins.template-string"),
+	require("lua.plugins.noice"),
 })
