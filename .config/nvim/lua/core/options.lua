@@ -31,3 +31,5 @@ vim.o.fileencoding = "utf-8"
 vim.o.cmdheight = 1
 -- Evitar que se muestren los ~ en Neovim
 vim.opt.fillchars = { eob = " " }
+-- Linea de estado global compartida
+vim.opt.laststatus = 3
