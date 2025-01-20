@@ -12,10 +12,10 @@ config = {
 	font = wezterm.font("JetBrains Mono", { weight = "DemiBold" }),
 	font_size = 10.6,
 	window_padding = {
-		left = 5,
-		right = 5,
-		top = 5,
-		bottom = 5,
+		left = 4,
+		right = 0,
+		top = 4,
+		bottom = 0,
 	},
 }
 
