@@ -30,4 +30,5 @@ require("lazy").setup({
 	require("plugins.comment-nvim"),
 	require("plugins.template-string"),
 	require("plugins.noice"),
+	require("plugins.virt-column"),
 })
