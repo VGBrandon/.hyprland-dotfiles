@@ -26,7 +26,7 @@ return {
 			diagnostics.checkmake,
 			formatting.prettier.with({
 				filetypes = { "html", "json", "yaml", "markdown", "javascript" },
-				extra_args = { "--trailing-comma", "none" },
+				extra_args = { "--trailing-comma", "none", "--tab-width", "2" },
 			}),
 			formatting.stylua,
 			formatting.shfmt.with({ args = { "-i", "4" } }),
