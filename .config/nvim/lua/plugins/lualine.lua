@@ -37,10 +37,21 @@ return {
 			cond = hide_in_width,
 		}
 
+		-- Customizando el tema everforest
+		local custom_everforest = require("lualine.themes.everforest")
+		-- Cambiando el color del background de la seccion c en todos los modos
+		custom_everforest.normal.c.bg = "272e33"
+		custom_everforest.insert.c.bg = "272e33"
+		custom_everforest.visual.c.bg = "272e33"
+		custom_everforest.replace.c.bg = "272e33"
+		custom_everforest.command.c.bg = "272e33"
+		custom_everforest.inactive.c.bg = "272e33"
+
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "auto", -- Set theme based on environment variable
+				-- Llamando al tema everforest customizado
+				theme = custom_everforest, -- Set theme based on environment variable
 				-- Some useful glyphs:
 				-- https://www.nerdfonts.com/cheat-sheet
 				--        
