@@ -31,4 +31,5 @@ require("lazy").setup({
 	require("plugins.template-string"),
 	require("plugins.noice"),
 	require("plugins.virt-column"),
+	require("plugins.lspsaga"),
 })
