@@ -37,3 +37,10 @@ zinit light zsh-users/zsh-history-substring-search
 
 # Iniciando zoxide
 eval "$(zoxide init zsh)"
+
+# Configuración del historial
+HISTFILE=~/.zsh_history            # Archivo donde se guarda el historial
+HISTSIZE=10000                     # Número máximo de comandos en el historial actual
+SAVEHIST=10000                     # Número máximo de comandos guardados en el archivo
+setopt appendhistory               # Añade comandos al historial y no sobrescribe
+setopt sharehistory                # Comparte el historial entre múltiples sesiones
