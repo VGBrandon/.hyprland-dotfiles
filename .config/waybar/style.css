@@ -74,3 +74,16 @@
     font-size: 13px;
     font-weight: 700;
 }
+
+#custom-blue_light_filter{
+    font-size: 24px;
+    padding:5px;
+    border-radius:5px;
+    /* background-color: #2e3440; */
+    color:white;
+}
+
+#custom-blue_light_filter:hover{
+    /* background-color: #4c566a; */
+    color: white;
+}
