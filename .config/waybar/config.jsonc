@@ -17,10 +17,23 @@
         "custom/textfive"
     ],
     "modules-right": [
+        "custom/blue_light_filter",
         "image#ethernetart",
         "custom/date",
         "clock"
     ],
+
+    //--------------------
+    // Mis modulos
+    "custom/blue_light_filter":{
+        "exec":"~/.config/waybar/scripts/toggle_blue_light_filter.sh",
+        "return-type":"json",
+        "interval":10,
+        "on-click": "~/.config/waybar/scripts/toggle_blue_light_filter.sh toggle"
+    },
+
+    //--------------------
+
     // Module-specific configurations
     "clock": {
         "format": "{:%H:%M %p}",
