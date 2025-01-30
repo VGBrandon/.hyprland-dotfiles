@@ -31,6 +31,7 @@ sudo pacman -S --needed --noconfirm \
     zoxide \
     waybar \
     ripgrep \
-    fzf
+    fzf \
+    bottom
 
 echo "Paquetes oficiales instalados."
