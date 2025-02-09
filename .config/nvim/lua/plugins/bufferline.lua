@@ -54,7 +54,7 @@ return {
 				-- tab_selected = {},
 				-- background = {},
 				-- indicator_selected = {},
-				-- fill = {},
+				fill = { bg = "NONE" }, -- Quitar el color de fondo
 			},
 		})
 	end,
