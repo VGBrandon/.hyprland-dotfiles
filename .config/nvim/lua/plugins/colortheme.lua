@@ -34,7 +34,18 @@ return {
 			require("everforest").setup({
 				-- Your config here
 			})
-			vim.cmd.colorscheme("everforest")
+			--vim.cmd.colorscheme("everforest")
+		end,
+	},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				-- Your config here
+			})
+			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
 	},
 }
