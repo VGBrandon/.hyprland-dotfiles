@@ -51,13 +51,13 @@ return {
 			options = {
 				icons_enabled = true,
 				-- Llamando al tema everforest customizado
-				theme = custom_everforest, -- Set theme based on environment variable
+				theme = "auto", --custom_everforest, -- Set theme based on environment variable
 				-- Some useful glyphs:
 				-- https://www.nerdfonts.com/cheat-sheet
 				--        
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "|", right = "|" },
-				disabled_filetypes = { "alpha", "neo-tree" },
+				disabled_filetypes = { "alpha" }, -- se quito de la lista a neotree
 				always_divide_middle = true,
 				global_status = true,
 			},
