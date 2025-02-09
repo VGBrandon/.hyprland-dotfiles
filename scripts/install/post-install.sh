@@ -5,3 +5,9 @@
 
 # Reemplazar contenido de hyprland.conf
 $HOME/.hyprland-dotfiles/scripts/tools/configure-hyprland.sh
+
+# Instalacion de pnpm
+sudo npm install -g pnpm
+
+# Instalacion de live-server
+sudo npm install -g live-server
