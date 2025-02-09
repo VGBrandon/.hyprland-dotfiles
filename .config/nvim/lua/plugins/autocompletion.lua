@@ -37,9 +37,9 @@ return {
 		},
 		config = function()
 			-- Customizando el bg de everforest en cmp
-			vim.api.nvim_set_hl(0, "Pmenu", { bg = "#272E33" })
-			vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#272E33" })
-			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#272E33" })
+			--vim.api.nvim_set_hl(0, "Pmenu", { bg = "#272E33" })
+			--vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#272E33" })
+			--vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#272E33" })
 
 			-- See `:help cmp`
 			local cmp = require("cmp")
