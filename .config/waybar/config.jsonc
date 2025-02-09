@@ -17,6 +17,7 @@
         "custom/textfive"
     ],
     "modules-right": [
+        "pulseaudio/slider",
         "custom/blue_light_filter",
         "image#ethernetart",
         "custom/date",
@@ -30,6 +31,12 @@
         "return-type":"json",
         "interval":10,
         "on-click": "~/.config/waybar/scripts/toggle_blue_light_filter.sh toggle"
+    },
+
+    "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
     },
 
     //--------------------
