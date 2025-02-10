@@ -32,6 +32,7 @@ sudo pacman -S --needed --noconfirm \
     waybar \
     ripgrep \
     fzf \
-    bottom
+    bottom \
+    os-prober
 
 echo "Paquetes oficiales instalados."
