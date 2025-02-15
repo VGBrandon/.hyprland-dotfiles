@@ -11,6 +11,11 @@ fi
 # Leer el estado actual
 STATE=$(<"$STATE_FILE")
 
+# Si el script se ejecuta sin argumentos (inicio automático), activar si el estado es "on"
+if [[ -z $1 && $STATE == "on" ]]; then
+    hyprshade on blue-light-filter-w11
+fi
+
 # Alternar estado solo si se ejecuta con un clic
 if [[ $1 == "toggle" ]]; then
     if [[ $STATE == "off" ]]; then
