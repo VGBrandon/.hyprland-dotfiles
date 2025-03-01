@@ -32,4 +32,5 @@ require("lazy").setup({
 	require("plugins.noice"),
 	require("plugins.virt-column"),
 	require("plugins.live-server"),
+	require("plugins.flash"),
 })
