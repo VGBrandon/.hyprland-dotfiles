@@ -35,6 +35,9 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-history-substring-search
 
+# Hacer las búsquedas y sugerencias case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 # Iniciando zoxide
 eval "$(zoxide init zsh)"
 
@@ -44,3 +47,10 @@ HISTSIZE=10000                     # Número máximo de comandos en el historial
 SAVEHIST=10000                     # Número máximo de comandos guardados en el archivo
 setopt appendhistory               # Añade comandos al historial y no sobrescribe
 setopt sharehistory                # Comparte el historial entre múltiples sesiones
+
+# bun completions
+[ -s "/home/vgbrandon/.bun/_bun" ] && source "/home/vgbrandon/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
