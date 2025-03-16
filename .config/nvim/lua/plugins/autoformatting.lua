@@ -25,7 +25,7 @@ return {
 		local sources = {
 			diagnostics.checkmake,
 			formatting.prettier.with({
-				filetypes = { "html", "json", "yaml", "markdown", "javascript" },
+				filetypes = { "html", "json", "yaml", "markdown", "javascript", "typescriptreact" },
 				extra_args = { "--trailing-comma", "none", "--tab-width", "2" },
 			}),
 			formatting.stylua,
