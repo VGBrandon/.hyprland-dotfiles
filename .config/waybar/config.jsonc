@@ -2,7 +2,7 @@
     // General Waybar configuration
     "output": "HDMI-A-1", // Solo para mi pantalla principal
     "layer": "top",
-    "height": 23,
+    "height": 20,
     "margin": 0,
     "spacing": 10,
     "border-size": 2,
@@ -19,6 +19,7 @@
     "modules-right": [
         "pulseaudio/slider",
         "custom/blue_light_filter",
+        "custom/wallpaper",
         "image#ethernetart",
         "custom/date",
         "clock"
@@ -34,9 +35,15 @@
     },
 
     "pulseaudio/slider": {
-    "min": 0,
-    "max": 100,
-    "orientation": "horizontal"
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+
+    "custom/wallpaper": {
+        "format": "󰏘",        "exec": "~/.config/waybar/scripts/wallpaper_changer.sh",
+        "on-click": "~/.config/waybar/scripts/wallpaper_changer.sh toggle",
+        "interval": 0
     },
 
     //--------------------
