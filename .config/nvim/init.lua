@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	require("plugins.neo-tree"),
-	require("plugins.colortheme"),
+	require("plugins.colorscheme"),
 	require("plugins.transparent"),
 	require("plugins.bufferline"),
 	require("plugins.lualine"),
@@ -33,4 +33,6 @@ require("lazy").setup({
 	require("plugins.virt-column"),
 	require("plugins.live-server"),
 	require("plugins.flash"),
+	require("plugins.nvim-notify"),
+	require("plugins.lush"),
 })
