@@ -34,6 +34,8 @@ return {
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = { signs = false },
+		-- Para usarlo en js debemos escribir "TODO:" o lo que querramos dentro de
+		-- un comentario
 	},
 	{
 		-- High-performance color highlighter
