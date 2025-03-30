@@ -20,6 +20,7 @@ yay -S --needed --noconfirm \
     wezterm-git \
     hyprshot \
     thunar-shares-plugin \
-    apple-fonts
+    apple-fonts \
+    mirage
 
 echo "Paquetes AUR instalados."
