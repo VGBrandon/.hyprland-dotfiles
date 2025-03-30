@@ -35,4 +35,5 @@ require("lazy").setup({
 	require("plugins.flash"),
 	require("plugins.nvim-notify"),
 	require("plugins.lush"),
+	require("plugins.nvim-ts-autotag"),
 })
