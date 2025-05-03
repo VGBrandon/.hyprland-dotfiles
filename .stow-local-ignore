@@ -2,3 +2,5 @@ scripts
 setup.sh
 packages
 .git
+install
+install.sh
