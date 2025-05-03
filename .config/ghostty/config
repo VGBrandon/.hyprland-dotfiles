@@ -22,7 +22,7 @@
  font-family = JetBrainsMono Nerd Font
  font-size = 10.5
  window-padding-x = 0
- theme = mellow
+ theme = gruvbox-material-hard
 #
 # # Spacing around the equals sign does not matter.
 # # All of these are identical:
