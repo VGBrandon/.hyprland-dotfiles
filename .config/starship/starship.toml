@@ -18,7 +18,7 @@ $line_break\
 $character"""
 
 add_newline = true
-palette = "base16-ashes"
+palette = "gruvbox_material_hard"
 
 [character]
 success_symbol = '[➜](bold green)'
@@ -144,3 +144,17 @@ yellow='#C7C795'
 gray='#565E65'
 white ='#ADB3BA'
 black='#393F45'
+
+[palettes.gruvbox_material_hard]
+dark_blue = '#7daea3'
+blue = '#7daea3'
+teal = '#8bba7f'
+red = '#ea6962'
+orange = '#e78a4e'
+green = '#89b382'
+yellow = '#d8a657'
+purple = '#d3869b'
+gray = '#7c6f64'
+black = '#141617'
+white = '#ddc7a1'
+
