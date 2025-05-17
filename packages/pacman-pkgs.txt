@@ -23,3 +23,9 @@ starship
 zsh
 ghostty
 stow
+tumbler
+ffmpegthumbnailer
+ark
+thunar-archive-plugin
+thunar-media-tags-plugin
+thunar-volman
