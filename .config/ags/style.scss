@@ -17,8 +17,37 @@ window.Bar {
     button {
         border-radius: 8px;
         margin: 2px;
+        border: 50px;
     }
 
+     .AudioSlider {
+         * {
+            all: unset;
+        }
+         icon {
+            margin-right: .6em;
+        }
+
+        & {
+            margin: 0 1em;
+        }
+        highlight {
+            background-color: $fg-color;
+            min-height: .8em;
+            border-radius: 8px;
+        }
+       slider{
+            background-color: transparent;
+            border-radius: 8px;
+            min-height: 1em;
+            min-width: 1em;
+            margin: 0em;
+        }
+           trough {
+            background-color: color.adjust(#3C3836, $alpha: -0.8);
+            border-radius: 8px;
+        }
+    }
 
 }
 
