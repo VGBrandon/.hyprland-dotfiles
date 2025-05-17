@@ -19,18 +19,16 @@ const date = Variable<string>("").poll(
 );
 
 function AudioSlider() {
-  const speaker = Wp.get_default()?.audio.defaultSpeaker!;
+  const speaker = Wp.get_default()?.audio.defaultSpeaker!
 
-  return (
-    <button className="AudioSlider" css="min-width: 140px">
-      <icon icon={bind(speaker, "volumeIcon")} />
-      <slider
-        hexpand
-        onDragged={({ value }) => (speaker.volume = value)}
-        value={bind(speaker, "volume")}
-      />
-    </button>
-  );
+  return <box className="AudioSlider" css="min-width: 140px">
+    <icon icon={bind(speaker, "volumeIcon")} />
+    <slider
+      hexpand
+      onDragged={({ value }) => speaker.volume = value}
+      value={bind(speaker, "volume")}
+    />
+  </box>
 }
 
 function FocusedClient() {
@@ -102,6 +100,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
         </button>
 
         <box halign={Gtk.Align.END}>
+          <AudioSlider />
           <FocusedClient />
           <button onClicked={() => print("fecha")}>
             <label label={date()} />
